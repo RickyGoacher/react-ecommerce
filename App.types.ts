@@ -1,11 +1,11 @@
-export interface ProductList {
+export interface ProductListInterface {
     limit: number;
-    products: Array<ProductData>;
+    products: Array<ProductDataInterface>;
     skip: number;
     total: number;
 }
 
-export interface ProductData {
+export interface ProductDataInterface {
     availabilityStatus: string;
     brand: string;
     category: string;
@@ -27,4 +27,10 @@ export interface ProductData {
     title: string;
     warrentyInformation: string;
     weight: number;
+}
+
+export interface CategoryDataInterface {
+    slug: string;
+    name: string;
+    url: string;
 }
