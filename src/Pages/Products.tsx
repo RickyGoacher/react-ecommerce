@@ -1,8 +1,11 @@
-import { getProducts } from '../../data/ProductData';
+import { getProducts, getCategories } from '../../data/ProductData';
+import { useParams } from 'react-router-dom';
 
 export const Products = () => {
 
-    getProducts();
+    const Params = useParams();
+
+    getProducts(10, 0, Params.category);
 
     return (
         <>
