@@ -1,4 +1,4 @@
-import {ProductListInterface, CategoryDataInterface} from '../App.types.ts';
+import {ProductListInterface, CategoryDataInterface, ProductDataInterface} from '../App.types.ts';
 
 const BaseURL = 'https://dummyjson.com';
 
@@ -18,7 +18,19 @@ export async function getProducts(limit?:number, skip?:number, category?: string
     const URL = `${BaseURL}/products${Category}${limit || skip ? "?" : ''}${Limit}${Skip}`;
     const Response = await fetch(URL);
     const Data:ProductListInterface = await Response.json();
-    console.log(Data, 'the data');
+    return Data;
+}
+
+/*
+    GET PRODUCT BY ID
+    PARAMS:
+        - ID
+*/
+
+export async function getProduct(id:number) {
+    const URL = `${BaseURL}/products/${id}`;
+    const Response = await fetch(URL);
+    const Data:ProductDataInterface = await Response.json();
     return Data;
 }
 
@@ -31,6 +43,5 @@ export async function getProducts(limit?:number, skip?:number, category?: string
 export async function getCategories() {
     const Response = await fetch(`${BaseURL}/products/categories`);
     const Data:Array<CategoryDataInterface> = await Response.json();
-    console.log(Data, ' cat data')
     return Data;
 }

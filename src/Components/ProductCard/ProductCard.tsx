@@ -12,7 +12,7 @@ export const ProductCard = ({props}:ProductCardInterface) => {
 
     return (
         <div className="product-card">
-            <NavLink to={ProductURL}>
+            <NavLink to={`/${ProductURL}`} state={{id: props.id}}>
                 <div className="image">
                     <img src={props.thumbnail} width="400" height="200"/>
                 </div>
