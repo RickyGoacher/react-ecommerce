@@ -11,7 +11,6 @@ export const Reviews = (props: ReviewsInterface) => {
     const StarList = [];
 
     for(let i = 0; i < Math.floor(props.rating); i++) {
-        console.log(props.rating, 'ratings')
         StarList.push(<span key={i} className="star" style={props.styles}></span>)
     }
 
