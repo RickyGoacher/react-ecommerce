@@ -16,7 +16,7 @@ export const Reviews = (props: ReviewsInterface) => {
     }
 
     if(props.rating % 1) {
-        if(props.rating % 1) StarList.push(<span className="star-part" style={props.styles}></span>);
+        if(props.rating % 1) StarList.push(<span key={Math.random()} className="star-part" style={props.styles}></span>);
     }
 
     const GenerateStars = StarList.map(item => item);
