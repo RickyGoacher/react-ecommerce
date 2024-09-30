@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCategories } from "../../../data/ProductData";
 import { CategoryDataInterface } from "../../../App.types.ts";
+import "./style.css";
 
 export const Navigation = () => {
 
@@ -24,9 +25,6 @@ export const Navigation = () => {
 
     return (
         <nav>
-            <ul>
-                <li><NavLink to="/">Home</NavLink></li>
-            </ul>
             <ul>
                 {GenerateCategoryLinks}
             </ul>
