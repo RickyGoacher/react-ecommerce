@@ -20,7 +20,7 @@ export const Products = () => {
     const fetchProducts = useCallback(async () => {
         const data = await getProducts(10, 0, Params.category, getSortOrder.param, getSortOrder.direction);
         setProductData(data.products);
-    }, [getSortOrder]);
+    }, [getSortOrder, Params]);
 
     useEffect(() => {
         fetchProducts();
@@ -32,7 +32,7 @@ export const Products = () => {
 
     return (
         <>
-            <h1>Products</h1>
+            <h1>{Params.category?.split('-').join(' ').toUpperCase()}</h1>
             <ToolBar SetSortOrder={setSortOrder}/>
             <div className='product-list'>
                 {GenerateProducts}

@@ -1,6 +1,13 @@
 .product-list {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 12px;
+    justify-content: center;
     flex-wrap: wrap;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    padding: 1rem;
 }

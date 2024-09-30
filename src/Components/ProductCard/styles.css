@@ -1,5 +1,8 @@
 .product-card {
     width: 30%;
+    border: solid 1px lightgray;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .product-card .image {

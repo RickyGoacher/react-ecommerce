@@ -2,4 +2,10 @@ header .top-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: .5rem;
+}
+
+header .bottom-bar {
+    background-color: var(--primary-bg-colour);
+    padding: .5rem;
 }
