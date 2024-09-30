@@ -21,7 +21,7 @@ export interface ProductDataInterface {
     returnPolicy: string;
     reviews: Array<{rating: number; comment: string; date: string; reviewerName: string; reviewerEmail: string;}>;
     shippingInformation: string;
-    sku: number;
+    sku: string;
     tags: Array<string>;
     thumbnail: string;
     title: string;

@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { getProduct } from "../../../data/ProductData";
 import { useEffect, useState } from "react";
 import { ProductDataInterface } from '../../../App.types';
+import { ProductDetails } from "../../Components/ProductDetails/ProductDetails";
 
 export const ProductDisplay = () => {
 
@@ -20,9 +21,15 @@ export const ProductDisplay = () => {
 
     return (
         <>
-            <h1>{getProductData?.title}</h1>
-            <p>{getProductData?.description}</p>
-            <span>{getProductData?.price}</span>
+            <ProductDetails 
+                Title={getProductData?.title} 
+                Description={getProductData?.description} 
+                Brand={getProductData?.brand}
+                Price={getProductData?.price}
+                DiscountPercent={getProductData?.discountPercentage}
+                Rating={getProductData?.rating}
+                Sku={getProductData?.sku}
+            />
         </>
     );
 }
