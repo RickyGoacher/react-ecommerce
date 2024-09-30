@@ -11,11 +11,13 @@ const BaseURL = 'https://dummyjson.com';
     - Category - Fetches category Specific products.
 */
 
-export async function getProducts(limit?:number, skip?:number, category?: string) {
+export async function getProducts(limit?:number, skip?:number, category?: string, sortBy?: string, order?: string) {
     const Limit = limit ? 'limit=' + limit : '';
     const Skip = skip ? 'skip=' + skip : '';
+    const SortBy = sortBy ? '&sortBy=' + sortBy : '';
+    const Order= order ? '&order=' + order : '';
     const Category = category ? '/category/' + category : '';
-    const URL = `${BaseURL}/products${Category}${limit || skip ? "?" : ''}${Limit}${Skip}`;
+    const URL = `${BaseURL}/products${Category}${limit || skip ? "?" : ''}${Limit}${Skip}${SortBy}${Order}`;
     const Response = await fetch(URL);
     const Data:ProductListInterface = await Response.json();
     return Data;
