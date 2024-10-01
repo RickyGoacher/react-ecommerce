@@ -16,15 +16,13 @@ interface SortInterface {
 export const Products = () => {
 
     const Params = useParams();
-    console.log(Params, 'params');
     const [getProductData, setProductData] = useState<ProductListInterface>();
     const [getSortOrder, setSortOrder] = useState<SortInterface>({direction: 'asc', param: 'title'});
     const [getPageNumber, setPageNumber] = useState(0);
-    console.log(getPageNumber, 'pnum')
+    const ProductLimit = 6;
 
     const fetchProducts = useCallback(async () => {
-        const data = await getProducts(6, (6 * (getPageNumber)), Params.category, getSortOrder.param, getSortOrder.direction);
-        console.log(data, 'data')
+        const data = await getProducts(ProductLimit, (ProductLimit * (getPageNumber)), Params.category, getSortOrder.param, getSortOrder.direction);
         setProductData(data);
     }, [getSortOrder, Params, getPageNumber]);
 
@@ -44,7 +42,7 @@ export const Products = () => {
             <div className='product-list'>
                 {GenerateProducts}
             </div>
-            {getProductData && <Pagination Limit={getProductData?.limit} Total={getProductData?.total} SetPageNumber={setPageNumber}/>}
+            {getProductData && <Pagination Limit={ProductLimit} Total={getProductData?.total} SetPageNumber={setPageNumber}/>}
         </>
     );
 }

@@ -15,3 +15,8 @@
 .pagination .disabled {
     color: grey;
 }
+
+.pagination .current-page {
+    background-color: var(--primary-bg-colour);
+    color: white;
+}
