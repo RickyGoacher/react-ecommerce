@@ -1,0 +1,17 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 1rem;
+}
+
+.pagination a,
+.pagination span {
+    padding: 1rem;
+    border: solid 1px grey;
+    cursor: pointer;
+}
+
+.pagination .disabled {
+    color: grey;
+}

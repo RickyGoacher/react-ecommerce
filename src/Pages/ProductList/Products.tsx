@@ -1,10 +1,11 @@
 import { getProducts } from '../../../data/ProductData';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState, useCallback } from 'react';
-import { ProductDataInterface } from '../../../App.types';
+import { ProductListInterface } from '../../../App.types';
 import { ProductCard } from '../../Components/ProductCard/ProductCard';
 import { Heading } from '../../Components/Headings/Heading';
 import { ToolBar } from '../../Components/ToolBar/ToolBar';
+import { Pagination } from '../../Components/Pagination/Pagination';
 import './styles.css';
 
 interface SortInterface {
@@ -15,19 +16,24 @@ interface SortInterface {
 export const Products = () => {
 
     const Params = useParams();
-    const [getProductData, setProductData] = useState<Array<ProductDataInterface> | null>(null);
+    console.log(Params, 'params');
+    const [getProductData, setProductData] = useState<ProductListInterface>();
     const [getSortOrder, setSortOrder] = useState<SortInterface>({direction: 'asc', param: 'title'});
+    const [getPageNumber, setPageNumber] = useState(0);
+    console.log(getPageNumber, 'pnum')
 
     const fetchProducts = useCallback(async () => {
-        const data = await getProducts(10, 0, Params.category, getSortOrder.param, getSortOrder.direction);
-        setProductData(data.products);
-    }, [getSortOrder, Params]);
+        const data = await getProducts(6, (6 * (getPageNumber)), Params.category, getSortOrder.param, getSortOrder.direction);
+        console.log(data, 'data')
+        setProductData(data);
+    }, [getSortOrder, Params, getPageNumber]);
 
     useEffect(() => {
         fetchProducts();
-    }, [Params, getSortOrder, fetchProducts]);
+        console.log(getPageNumber)
+    }, [Params, getSortOrder, fetchProducts, getPageNumber]);
 
-    const GenerateProducts = getProductData?.map(item => {
+    const GenerateProducts = getProductData?.products.map(item => {
         return <ProductCard key={item.title} props={item}/>
     });
 
@@ -38,6 +44,7 @@ export const Products = () => {
             <div className='product-list'>
                 {GenerateProducts}
             </div>
+            {getProductData && <Pagination Limit={getProductData?.limit} Total={getProductData?.total} SetPageNumber={setPageNumber}/>}
         </>
     );
 }

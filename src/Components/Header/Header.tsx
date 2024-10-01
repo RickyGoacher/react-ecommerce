@@ -1,6 +1,6 @@
 import { Navigation } from "../Navigation/Navigation";
 import { Logo } from "../Logo/Logo";
-import SiteLogo from "../../../public/images/logo/logo.svg";
+import SiteLogo from "../../assets/logo/logo.svg";
 import "./style.css";
 
 export const Header = () => {
