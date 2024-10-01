@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState, useCallback } from 'react';
 import { ProductDataInterface } from '../../../App.types';
 import { ProductCard } from '../../Components/ProductCard/ProductCard';
+import { Heading } from '../../Components/Headings/Heading';
 import { ToolBar } from '../../Components/ToolBar/ToolBar';
 import './styles.css';
 
@@ -32,7 +33,7 @@ export const Products = () => {
 
     return (
         <>
-            <h1>{Params.category?.split('-').join(' ').toUpperCase()}</h1>
+            <Heading Number={1} HeadingStyles={{textAlign: "center", padding: "1rem"}}>{Params.category?.split('-').join(' ').toUpperCase()}</Heading>
             <ToolBar SetSortOrder={setSortOrder}/>
             <div className='product-list'>
                 {GenerateProducts}
