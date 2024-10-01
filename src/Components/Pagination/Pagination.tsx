@@ -27,11 +27,11 @@ export const Pagination = ({Total, Limit, SetPageNumber}:PaginationInterface) =>
 
     return (
         <div className="pagination">
-            {PageNumber == 1 ? <span className="disabled">Prev</span> : <span onClick={() => changePage(PageNumber - 1) } >Prev</span> }
-            
-            {PageNumber !== 1 && <span onClick={() => changePage(PageNumber + 1) } >{PageNumber - 1}</span>}
+            {PageNumber == 1 ? <span className="disabled">Prev</span> : <span onClick={() => changePage(PageNumber - 1) } >Prev</span> }    
+            {PageNumber !== 1 && <span onClick={() => changePage(PageNumber - 1) } >{PageNumber - 1}</span>}
             {PageNumber && <span className="current-page">{PageNumber}</span>}
-            {PageNumber + 1 <= NumberOfPages && <span onClick={() => changePage(PageNumber + 2) } >{PageNumber + 1}</span>}
+            {PageNumber + 1 <= NumberOfPages && <span onClick={() => changePage(PageNumber + 1) } >{PageNumber + 1 }</span>}
+            {PageNumber == 1 && PageNumber + 2 <= NumberOfPages && <span onClick={() => changePage(PageNumber + 2) } >{PageNumber + 2}</span>}
             {PageNumber == NumberOfPages ? <span className="disabled">Next</span> : <span  onClick={() => changePage(PageNumber + 1) }>Next</span> }
         </div>
     );
