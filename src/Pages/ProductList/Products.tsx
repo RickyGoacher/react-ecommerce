@@ -19,7 +19,7 @@ export const Products = () => {
     const [getProductData, setProductData] = useState<ProductListInterface>();
     const [getSortOrder, setSortOrder] = useState<SortInterface>({direction: 'asc', param: 'title'});
     const [getPageNumber, setPageNumber] = useState(0);
-    const ProductLimit = 6;
+    const ProductLimit = 3;
 
     const fetchProducts = useCallback(async () => {
         const data = await getProducts(ProductLimit, (ProductLimit * (getPageNumber)), Params.category, getSortOrder.param, getSortOrder.direction);
@@ -28,7 +28,6 @@ export const Products = () => {
 
     useEffect(() => {
         fetchProducts();
-        console.log(getPageNumber)
     }, [Params, getSortOrder, fetchProducts, getPageNumber]);
 
     const GenerateProducts = getProductData?.products.map(item => {

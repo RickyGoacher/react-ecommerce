@@ -1,0 +1,15 @@
+.image-gallery {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 1rem;
+}
+
+.image-item {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.image-item img {
+    width: 100%;
+}

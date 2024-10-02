@@ -1,0 +1,15 @@
+.product-details {
+    width: 50%;
+    position: relative;
+}
+
+.product-details-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
