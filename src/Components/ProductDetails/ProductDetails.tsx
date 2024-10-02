@@ -15,7 +15,6 @@ interface ProductDetailsInterface {
 }
 
 export const ProductDetails = (props:ProductDetailsInterface) => {
-    console.log(props)
     
     const StarRating = props.Rating ? props.Rating : 0;
 
@@ -27,7 +26,7 @@ export const ProductDetails = (props:ProductDetailsInterface) => {
                 <Reviews rating={StarRating} styles={{width: "24px", height: "24px", backgroundColor: "#c1c111"}}/>
                 <span>SKU: {props.Sku}</span>
                 {props.Price && <Price Price={props.Price} DiscountPercentage={props?.DiscountPercent} OldPriceStyles={{color: "grey", fontSize: "1.5rem"}} DiscountedPriceStyles={{color: "red", fontSize: "3rem"}} FinalPriceStyles={{color: "Black", fontSize: "3rem"}}/>}
-                <AddToBasket/>
+                {props.Title && props.Sku && <AddToBasket ProductName={props.Title} ProductSku={props.Sku} />}
                 <p>{props.Description}</p>
             </div>
         </section>

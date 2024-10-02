@@ -18,7 +18,6 @@ export const ProductDisplay = () => {
 
     async function fetchProduct() {
         const data = await getProduct(Location.state.id);
-        console.log(data, 'this here')
         setProductData(data);
     }
 

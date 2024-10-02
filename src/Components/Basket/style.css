@@ -1,0 +1,23 @@
+.basket-container {
+    position: relative;
+}
+
+.basket {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: solid 1px grey;
+    min-height: 200px;
+    min-width: 200px;
+}
+
+.basket-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.basket-item .actions span {
+    padding: 0 .5rem;
+    border: solid 1px grey;
+    cursor: pointer;
+}

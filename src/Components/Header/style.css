@@ -9,3 +9,11 @@ header .bottom-bar {
     background-color: var(--primary-bg-colour);
     padding: .5rem;
 }
+
+.navigation-actions {
+    display: flex;
+}
+
+.navigation-actions input {
+    height: 40px;
+}
