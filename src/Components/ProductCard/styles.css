@@ -1,7 +1,7 @@
 .product-card {
     width: 30%;
-    border: solid 1px lightgray;
-    padding: 1rem;
+    border: solid 1px var(--grey-colour);
+    padding: var(--medium-spacing);
     box-sizing: border-box;
 }
 
@@ -9,7 +9,7 @@
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: var(--small-spacing);
 }
 
 .product-card .image {

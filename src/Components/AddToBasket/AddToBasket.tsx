@@ -1,4 +1,5 @@
 import { useBasketContext } from "../../Context/BasketContext/BasketContext";
+import "./style.css";
 
 interface AddToBasketInterface {
     ProductName: string;
@@ -17,8 +18,8 @@ export const AddToBasket = ({ProductName, ProductSku}: AddToBasketInterface) => 
 
     return (
         <>
-            <div>
-                <span onClick={() => decreaseQuantity(ProductSku)}>-</span><button onClick={() => increaseQuantity(ProductSku, ProductName)}>Add to Basket</button><span onClick={() => increaseQuantity(ProductSku, ProductName)}>+</span>
+            <div className="addto-basket-actions">
+                <span className="minus" onClick={() => decreaseQuantity(ProductSku)}>-</span><button className="basket-btn" onClick={() => increaseQuantity(ProductSku, ProductName)}>Add to Basket</button><span className="plus" onClick={() => increaseQuantity(ProductSku, ProductName)}>+</span>
             </div>
         </>
     );

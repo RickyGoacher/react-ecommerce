@@ -1,0 +1,29 @@
+.addto-basket-actions {
+    display: flex;
+}
+
+.addto-basket-actions span {
+    cursor: pointer;
+    padding: var(--medium-spacing);
+    border: solid 1px var(--grey-colour);
+    font-weight: 600;
+}
+
+.addto-basket-actions .plus {
+    border-left: 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.addto-basket-actions .minus {
+    border-right: 0;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.addto-basket-actions button {
+    cursor: pointer;
+    padding: var(--medium-spacing);
+    border: solid 1px var(--primary-bg-colour);
+    color: var(--white-colour);
+    background-color: var(--primary-bg-colour);
+    border-radius: var(--border-radius);
+}

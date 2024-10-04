@@ -25,7 +25,7 @@ export const ProductDetails = (props:ProductDetailsInterface) => {
                 <h1>{props.Title}</h1>
                 <Reviews rating={StarRating} styles={{width: "24px", height: "24px", backgroundColor: "#c1c111"}}/>
                 <span>SKU: {props.Sku}</span>
-                {props.Price && <Price Price={props.Price} DiscountPercentage={props?.DiscountPercent} OldPriceStyles={{color: "grey", fontSize: "1.5rem"}} DiscountedPriceStyles={{color: "red", fontSize: "3rem"}} FinalPriceStyles={{color: "Black", fontSize: "3rem"}}/>}
+                {props.Price && <Price Price={props.Price} DiscountPercentage={props?.DiscountPercent} OldPriceStyles={{color: "var(--grey-colour)", fontSize: "1.5rem"}} DiscountedPriceStyles={{color: "var(--cta-colour)", fontSize: "3rem"}} FinalPriceStyles={{color: "var(--black-colour)", fontSize: "3rem"}}/>}
                 {props.Title && props.Sku && <AddToBasket ProductName={props.Title} ProductSku={props.Sku} />}
                 <p>{props.Description}</p>
             </div>

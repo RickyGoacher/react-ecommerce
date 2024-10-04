@@ -1,12 +1,12 @@
 .image-gallery {
     box-sizing: border-box;
     width: 50%;
-    padding: 1rem;
+    padding: var(--small-spacing);
 }
 
 .image-item {
     width: 100%;
-    padding: 1rem;
+    padding: var(--medium-spacing);
     box-sizing: border-box;
 }
 

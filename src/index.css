@@ -1,5 +1,16 @@
 :root {
-  --primary-bg-colour: #769FB6;
+  --primary-bg-colour: #003049;
+  --secondary-bg-colour: #669bbc;
+  --tertiary-bg-colour: #fdf0d5;
+  --cta-colour: #c1121f;
+  --grey-colour: #e5e5e5;
+  --black-colour: #000000;
+  --white-colour: #ffffff;
+  --small-spacing: 6px;
+  --medium-spacing: 12px;
+  --large-spacing: 24px;
+  --extra-large-spacing: 48px;
+  --border-radius: 2px;
 }
 
 body {

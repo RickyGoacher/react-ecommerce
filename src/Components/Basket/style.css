@@ -2,13 +2,49 @@
     position: relative;
 }
 
+.basket-trigger {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--small-spacing);
+    border: solid 1px var(--grey-colour);
+    border-radius: 2px;
+}
+
+.basket-trigger span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket-trigger span:not(.counter) {
+    padding: var(--small-spacing);
+}
+
+.basket-trigger .counter {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: var(--cta-colour);
+    color: var(--white-colour);
+}
+
 .basket {
-    position: absolute;
+    position: fixed;
+    right: -300px;
+    top: 0;
+    background-color: var(--white-colour);
+    border: solid 1px var(--grey-colour);
+    height: 100vh;
+    min-width: 300px;
+    z-index: 100;
+    transition: linear .5s;
+}
+
+.basket.active {
     right: 0;
-    background-color: white;
-    border: solid 1px grey;
-    min-height: 200px;
-    min-width: 200px;
 }
 
 .basket-item {
@@ -17,7 +53,17 @@
 }
 
 .basket-item .actions span {
-    padding: 0 .5rem;
-    border: solid 1px grey;
+    padding: 0 var(--small-spacing);
+    border: solid 1px var(--grey-colour);
+    cursor: pointer;
+}
+
+.basket-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--medium-spacing);
+}
+
+.basket-actions span {
     cursor: pointer;
 }
