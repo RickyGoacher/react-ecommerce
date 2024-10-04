@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useState, useEffect } from "react";
+import { useStorage } from "../../Hooks/UseStorageHook/UseStorage";
 
 interface BasketContextProviderInterface {
     children: ReactNode
@@ -26,7 +27,23 @@ export function useBasketContext() {
 
 export function BasketContextProvider({children}:BasketContextProviderInterface) {
 
+    const [getStorage, setStorage] = useStorage();
+
+    const CurrentBasket = JSON.parse(getStorage('basket'));
+
     const [getBasketItem, setBasketItem] = useState<Array<BasketItemInterface>>([]);
+
+    useEffect(() => {
+        setStorage(getBasketItem);
+    }, [getBasketItem]);
+
+    useEffect(() => {
+        updateStorage();
+    }, []);
+
+    function updateStorage() {
+        setBasketItem(CurrentBasket !== null ? CurrentBasket : []);
+    }
 
     function getItemQuantity(sku: string) {
         return getBasketItem?.find(item => item.sku === sku)?.quantity || 0;

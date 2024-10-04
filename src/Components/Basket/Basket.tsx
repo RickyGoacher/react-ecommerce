@@ -1,4 +1,4 @@
-import { useBasketContext } from "../../Context/BasketContext/BasketContext"
+import { useBasketContext } from "../../Context/BasketContext/BasketContext";
 import "./style.css";
 
 export const Basket = () => {
