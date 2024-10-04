@@ -3,18 +3,44 @@ import { Logo } from "../Logo/Logo";
 import SiteLogo from "../../assets/logo/logo.svg";
 import "./style.css";
 import { Basket } from "../Basket/Basket";
+import { useState, useEffect, useRef } from "react";
 
 export const Header = () => {
+
+    const [getMenuState, setMenuState] = useState<boolean>(false);
+
+    const ref = useRef<HTMLInputElement>(null);
+
+    function outsideClickHandler(e:Event) {
+        e.preventDefault();
+        console.log(e, 'e')
+        if (ref.current && !ref.current.contains(e.target as HTMLButtonElement)) {
+            setMenuState(false);
+        } 
+    }
+
+    useEffect(() => {
+        window.addEventListener("mousedown", outsideClickHandler);
+        return (() => {
+            window.removeEventListener("mousedown", outsideClickHandler);
+        });
+    });
+
     return (
         <header>
             <div className="top-bar">
-                <Logo LogoPath={SiteLogo} LogoWidth="100px" LogoHeight="50px" AltText="Site Logo"/>
+                <div className="logo-section">
+                    <div className="menu">
+                        <span className="menu-trigger" onClick={() => setMenuState(!getMenuState)}>#</span>
+                    </div>
+                    <Logo LogoPath={SiteLogo} LogoWidth="40px" LogoHeight="40px" AltText="Site Logo"/>
+                </div>
                 <div className="navigation-actions">
-                    <input type="text" />
                     <Basket />
                 </div>  
             </div>
-            <div className="bottom-bar">
+            <div ref={ref} className={getMenuState ? "menu-container active" : "menu-container"}>
+                <div className="menu-actions"><span onClick={() => setMenuState(!getMenuState)}>X</span></div>
                 <Navigation />
             </div>
         </header>

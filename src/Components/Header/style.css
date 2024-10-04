@@ -5,9 +5,9 @@ header .top-bar {
     padding: var(--small-spacing);
 }
 
-header .bottom-bar {
+header .menu-container {
     background-color: var(--primary-bg-colour);
-    padding: var(--small-spacing);
+    box-sizing: border-box;
 }
 
 .navigation-actions {
@@ -16,4 +16,57 @@ header .bottom-bar {
 
 .navigation-actions input {
     height: 40px;
+}
+
+.logo-section {
+    display: flex;
+    gap: var(--medium-spacing);
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu .menu-trigger {
+        cursor: pointer;
+        padding: var(--medium-spacing);
+        border: solid 1px var(--grey-colour);
+        border-radius: var(--border-radius);
+    }
+
+    .menu-container {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100vh;
+        transition: linear .5s;
+        z-index: 100;
+    }
+
+    .menu-container.active {
+        left: 0;
+    }
+
+    .menu-actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: var(--white-colour);
+        border-bottom: solid 1px var(--white-colour);
+    }
+
+    .menu-actions span {
+        cursor: pointer;
+        padding: var(--medium-spacing);
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    
 }

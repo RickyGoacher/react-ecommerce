@@ -1,5 +1,4 @@
 .product-card {
-    width: 30%;
     border: solid 1px var(--grey-colour);
     padding: var(--medium-spacing);
     box-sizing: border-box;
@@ -21,4 +20,19 @@
     width: 100%;
     height: 200px;
     object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+    .product-card {
+        width: calc(50% - var(--medium-spacing));
+        border: solid 1px var(--grey-colour);
+        padding: var(--medium-spacing);
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .product-card {
+        width: 30%;
+    }
 }

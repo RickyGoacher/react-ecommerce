@@ -11,6 +11,8 @@
   --large-spacing: 24px;
   --extra-large-spacing: 48px;
   --border-radius: 2px;
+  --mobile-breakpoint: 768px;
+  --desktop-breakpoint: 768px;
 }
 
 body {
