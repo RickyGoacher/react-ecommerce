@@ -16,7 +16,9 @@ nav ul li a {
 @media screen and (max-width: 768px) {
 
     nav {
-        padding: 12px;
+        padding: var(--medium-spacing);
+        max-height: 90vh;
+        overflow-y: scroll;
     }
 
     nav ul {

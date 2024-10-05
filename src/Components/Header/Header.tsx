@@ -13,7 +13,6 @@ export const Header = () => {
 
     function outsideClickHandler(e:Event) {
         e.preventDefault();
-        console.log(e, 'e')
         if (ref.current && !ref.current.contains(e.target as HTMLButtonElement)) {
             setMenuState(false);
         } 
@@ -41,7 +40,7 @@ export const Header = () => {
             </div>
             <div ref={ref} className={getMenuState ? "menu-container active" : "menu-container"}>
                 <div className="menu-actions"><span onClick={() => setMenuState(!getMenuState)}>X</span></div>
-                <Navigation />
+                <Navigation SetMenuState={setMenuState}/>
             </div>
         </header>
     );

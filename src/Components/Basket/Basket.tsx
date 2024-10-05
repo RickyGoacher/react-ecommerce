@@ -12,7 +12,6 @@ export const Basket = () => {
 
     function outsideClickHandler(e:Event) {
         e.preventDefault();
-        console.log(e, 'e')
         if (ref.current && !ref.current.contains(e.target as HTMLButtonElement)) {
             setBasketState(false);
         } 

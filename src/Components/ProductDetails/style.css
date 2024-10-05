@@ -1,5 +1,4 @@
 .product-details {
-    width: 50%;
     position: relative;
 }
 
@@ -12,4 +11,16 @@
     gap: var(--medium-spacing);
     padding: var(--medium-spacing);
     box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .product-details {
+        width: 100%;
+    }
+}
+
+@media screen and (min-widht: 768px) {
+    .product-details {
+        width: 50%;
+    }
 }

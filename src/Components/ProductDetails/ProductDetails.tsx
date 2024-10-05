@@ -21,7 +21,7 @@ export const ProductDetails = (props:ProductDetailsInterface) => {
     return (
         <section className="product-details">
             <div className="product-details-wrapper">
-                {props.Brand && <Brand Name={props.Brand} BrandStyles={{backgroundColor: 'blue', color: "white", padding: '1rem 2rem'}}/>}
+                {props.Brand && <Brand Name={props.Brand} BrandStyles={{backgroundColor: 'var(--secondary-bg-colour)', color: "var(--white-colour)", padding: 'var(--medium-spacing)'}}/>}
                 <h1>{props.Title}</h1>
                 <Reviews rating={StarRating} styles={{width: "24px", height: "24px", backgroundColor: "#c1c111"}}/>
                 <span>SKU: {props.Sku}</span>

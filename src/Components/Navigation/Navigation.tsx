@@ -4,7 +4,11 @@ import { getCategories } from "../../../data/ProductData";
 import { CategoryDataInterface } from "../../../App.types.ts";
 import "./style.css";
 
-export const Navigation = () => {
+interface NavigationInterface {
+    SetMenuState: (state:boolean) => void;
+}
+
+export const Navigation = ({ SetMenuState }:NavigationInterface) => {
 
     const [getCategoryData, setCategoryData] = useState<Array<CategoryDataInterface> | null>(null);
 
@@ -19,7 +23,7 @@ export const Navigation = () => {
 
     const GenerateCategoryLinks = getCategoryData?.map(item => {
         return (
-            <li key={item.name}><NavLink to={`/products/${item.slug}`} >{item.name}</NavLink></li>
+            <li key={item.name} onClick={() => SetMenuState(false)}><NavLink to={`/products/${item.slug}`} >{item.name}</NavLink></li>
         );
     });
 
