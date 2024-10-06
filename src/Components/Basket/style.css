@@ -46,8 +46,8 @@
 }
 
 .basket-items {
-    min-height: 80vh;
-    max-height: 80vh;
+    min-height: 75vh;
+    max-height: 75vh;
     overflow-y: scroll;
 }
 
@@ -72,13 +72,20 @@
 }
 
 .basket-actions {
+    height: 60px;
+    box-sizing: border-box;
+    border-bottom: solid 1px var(--grey-colour);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding: var(--medium-spacing);
 }
 
 .basket-actions span {
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .basket-wrapper {

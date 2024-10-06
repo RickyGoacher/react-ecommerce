@@ -7,6 +7,8 @@ header {
 }
 
 header .top-bar {
+    height: 60px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -41,8 +43,11 @@ header .menu-container {
     }
 
     .menu .menu-trigger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
-        padding: var(--medium-spacing);
+        padding: var(--small-spacing);
         border: solid 1px var(--grey-colour);
         border-radius: var(--border-radius);
     }
@@ -62,16 +67,25 @@ header .menu-container {
     }
 
     .menu-actions {
+        height: 60px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         color: var(--white-colour);
         border-bottom: solid 1px var(--white-colour);
+        box-sizing: border-box;
     }
 
     .menu-actions span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
         padding: var(--medium-spacing);
+    }
+
+    .menu-actions span > img {
+        filter: brightness(0) invert(1);
     }
 
 }

@@ -1,0 +1,14 @@
+footer {
+    min-height: 200px;
+    background-color: var(--white-colour);
+    border-top: solid 1px var(--grey-colour);
+}
+
+footer .top-container {
+    min-height: 160px;
+}
+
+footer .bottom-bar {
+    min-height: 40px;
+    background-color: var(--primary-bg-colour);
+}

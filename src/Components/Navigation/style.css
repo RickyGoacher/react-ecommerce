@@ -36,13 +36,45 @@ nav ul li a {
     }
 
     nav ul li a {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
+    nav > span {
+        display: none;
+    }
 }
 
 @media screen and (min-width:  768px) {
+
+    nav {
+        min-height: 50px;
+        display: flex;
+        overflow: hidden;
+        transition: max-height .5s;
+        justify-content: space-between;
+    }
+
+    nav > span {
+        min-width: 50px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transition: align-items .5s;
+    }
+
+    nav > span img {
+        transition: rotate .5s;
+        height: 50px;
+    }
+
+    nav > span.active img {
+        rotate: -180deg;
+    }
+
     nav ul {
+        height: fit-content;
+        box-sizing: border-box;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;

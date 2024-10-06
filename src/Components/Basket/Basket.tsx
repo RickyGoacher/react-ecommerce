@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useBasketContext } from "../../Context/BasketContext/BasketContext";
+import CloseIcon from "../../assets/images/icons/circle-xmark-regular.svg";
 import "./style.css";
 
 export const Basket = () => {
@@ -24,11 +25,7 @@ export const Basket = () => {
         });
     });
 
-    console.log(getBasketItem, 'basker it')
-
     const GenerateBasketItems = getBasketItem.map(item => {
-
-        console.log(item.image, 'image')
 
         return (
             <div key={item.sku} className="basket-item">
@@ -59,7 +56,7 @@ export const Basket = () => {
             <div className="basket-container">
                 <span className="basket-trigger" onClick={() => setBasketState(!getBasketState)}><span>Basket</span><span className="counter">{Counter > 0 && Counter}</span></span>
                 <div ref={ref} className={getBasketState ? "basket active" : "basket"}>
-                    <div className="basket-actions"><span onClick={() => setBasketState(!getBasketState)}>X</span></div>
+                    <div className="basket-actions"><span>My Basket</span><span onClick={() => setBasketState(!getBasketState)}><img src={CloseIcon} width="24" height="24"/></span></div>
                     <div className="basket-wrapper">
                         <div className="basket-items">
                             {GenerateBasketItems}

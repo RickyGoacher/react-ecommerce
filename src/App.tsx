@@ -4,6 +4,7 @@ import { Home } from './Pages/Home';
 import { Products } from './Pages/ProductList/Products';
 import { ProductDisplay } from './Pages/ProductDisplay/ProductDisplay';
 import { Header } from './Components/Header/Header';
+import { Footer } from './Components/Footer/Footer';
 import { BasketContextProvider } from './Context/BasketContext/BasketContext';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/products/:category" element={<Products/>}/>
           <Route path="/:product" element={<ProductDisplay/>}/>
         </Routes>
+        <Footer />
       </BasketContextProvider>
     </>
   );
