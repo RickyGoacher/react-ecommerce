@@ -1,0 +1,33 @@
+.category-tiles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--large-spacing);
+    justify-content: center;
+    gap: var(--large-spacing);
+    padding: var(--large-spacing) var(--medium-spacing);
+}
+
+.category-tiles .tile a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.category-tiles .tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .category-tiles .tile {
+        width: calc((100% / 2) - var(--large-spacing));
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .category-tiles .tile {
+        width: calc((100% / 4) - var(--large-spacing));
+    }
+}

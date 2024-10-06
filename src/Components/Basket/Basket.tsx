@@ -54,7 +54,7 @@ export const Basket = () => {
     return (
         <>
             <div className="basket-container">
-                <span className="basket-trigger" onClick={() => setBasketState(!getBasketState)}><span>Basket</span><span className="counter">{Counter > 0 && Counter}</span></span>
+                <span className="basket-trigger" onClick={() => setBasketState(!getBasketState)}><span>Basket</span>{Counter > 0 && <span className="counter">{ Counter}</span>}</span>
                 <div ref={ref} className={getBasketState ? "basket active" : "basket"}>
                     <div className="basket-actions"><span>My Basket</span><span onClick={() => setBasketState(!getBasketState)}><img src={CloseIcon} width="24" height="24"/></span></div>
                     <div className="basket-wrapper">

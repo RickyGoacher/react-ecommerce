@@ -1,0 +1,34 @@
+.banner-image-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-image-container .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: var(--black-colour);
+    opacity: .3;
+}
+
+.banner-image-container .text {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    color: var(--white-colour);
+}
+
+.banner-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
