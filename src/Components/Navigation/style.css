@@ -5,18 +5,11 @@ nav ul {
 
 nav ul li {
     list-style: none;
-    padding: 0 0 var(--medium-spacing) 0;
-    border-bottom: solid 1px var(--offwhite-colour);
-}
-
-nav ul li:last-child {
-    border-bottom: 0;
 }
 
 nav ul li a {
     text-decoration: none;
     color: var(--offwhite-colour);
-    font-size: 1.2rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -33,6 +26,19 @@ nav ul li a {
         margin: 0;
     }
 
+    nav ul li {
+        border-bottom: solid 1px var(--offwhite-colour);
+        padding: 0 0 var(--medium-spacing) 0;
+    }
+
+    nav ul li:last-child {
+        border-bottom: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
 }
 
 @media screen and (min-width:  768px) {
@@ -40,6 +46,12 @@ nav ul li a {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        padding: var(--medium-spacing);
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
     }
 
 }

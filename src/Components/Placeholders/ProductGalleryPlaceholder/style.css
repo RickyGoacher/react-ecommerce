@@ -1,0 +1,10 @@
+.image-gallery.placeholder .image-item {
+    padding: var(--medium-spacing);
+}
+
+.image-gallery.placeholder .image-item .image {
+    box-sizing: border-box;
+    width: 100%;
+    height: 300px;
+    background-color: var(--grey-colour);
+}

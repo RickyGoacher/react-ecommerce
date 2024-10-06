@@ -1,4 +1,5 @@
 import "./style.css";
+import { ProductGalleryPlaceholder } from "../Placeholders/ProductGalleryPlaceholder/ProductGalleryPlaceholder";
 
 interface GalleryInterface {
     Images: Array<string>;
@@ -16,7 +17,7 @@ export const Gallery = ({Images}:GalleryInterface) => {
 
     return (
         <div className="image-gallery">
-            {GenerateImages}
+            {!GenerateImages.length ? <ProductGalleryPlaceholder/> : GenerateImages}
         </div>
     )
 }

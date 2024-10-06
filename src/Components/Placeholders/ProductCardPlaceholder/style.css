@@ -1,0 +1,27 @@
+.product-card.placeholder {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--grey-colour);
+    padding: var(--medium-spacing);
+    box-sizing: border-box;
+    gap: var(--small-spacing);
+}
+
+.product-card.placeholder .image {
+    min-width: 100%;
+    min-height: 100px;
+    max-height: 100px;
+    background-color: var(--grey-colour);
+}
+
+.product-card.placeholder .heading-placeholder {
+    width: 80%;
+    height: 40px;
+    background-color: var(--grey-colour);
+}
+
+.product-card.placeholder .rating-placeholder {
+    width: 50%;
+    height: 30px;
+    background-color: var(--grey-colour);
+}
