@@ -32,6 +32,7 @@ export const ProductDisplay = () => {
                 DiscountPercent={getProductData?.discountPercentage}
                 Rating={getProductData?.rating}
                 Sku={getProductData?.sku}
+                Image={getProductData?.images[0]}
             />
         </div>
     );

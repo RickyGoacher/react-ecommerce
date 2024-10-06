@@ -6,6 +6,7 @@
   --grey-colour: #e5e5e5;
   --black-colour: #000000;
   --white-colour: #ffffff;
+  --offwhite-colour: #f1faee;
   --small-spacing: 6px;
   --medium-spacing: 12px;
   --large-spacing: 24px;
@@ -13,6 +14,7 @@
   --border-radius: 2px;
   --mobile-breakpoint: 768px;
   --desktop-breakpoint: 768px;
+  --primary-font: "Poppins", sans-serif;
 }
 
 body {
@@ -24,4 +26,16 @@ body {
 p {
   margin: 0;
   color: black;
+}
+
+* {
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-style: normal;
 }

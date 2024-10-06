@@ -24,18 +24,28 @@ export const Basket = () => {
         });
     });
 
+    console.log(getBasketItem, 'basker it')
+
     const GenerateBasketItems = getBasketItem.map(item => {
+
+        console.log(item.image, 'image')
 
         return (
             <div key={item.sku} className="basket-item">
-                <span>{item.name}</span>
-                <span>{item.sku}</span>
-                <span>{item.quantity}</span>
-                <div className="actions">
-                    <span onClick={() => decreaseQuantity(item.sku)}>-</span>
-                    <button onClick={() => removeFromBasket(item.sku)}>Remove</button>
-                    <span onClick={() => increaseQuantity(item.sku, item.name)}>+</span>
-                </div>    
+                <img src={item.image} width="80" height="80"/>
+                <div className="details">
+                    <span>{item.name}</span>
+                </div>
+                <div className="action-wrapper">
+                    <div className="actions">
+                        <span onClick={() => increaseQuantity(item.sku, item.name, item.image)}>+</span>
+                        <span>{item.quantity}</span>
+                        <span onClick={() => decreaseQuantity(item.sku)}>-</span>
+                    </div>
+                    <div className="actions">
+                        <button onClick={() => removeFromBasket(item.sku)}>Remove</button>            
+                    </div>  
+                </div>  
             </div>         
         );
     });
@@ -50,7 +60,14 @@ export const Basket = () => {
                 <span className="basket-trigger" onClick={() => setBasketState(!getBasketState)}><span>Basket</span><span className="counter">{Counter > 0 && Counter}</span></span>
                 <div ref={ref} className={getBasketState ? "basket active" : "basket"}>
                     <div className="basket-actions"><span onClick={() => setBasketState(!getBasketState)}>X</span></div>
-                    {GenerateBasketItems}
+                    <div className="basket-wrapper">
+                        <div className="basket-items">
+                            {GenerateBasketItems}
+                        </div>
+                        <div className="basket-proceed-actions">
+                            <button>Proceed to Checkout</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

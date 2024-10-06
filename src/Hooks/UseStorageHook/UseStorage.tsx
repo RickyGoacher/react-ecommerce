@@ -2,6 +2,7 @@ interface UseStorageInterface {
     sku: string;
     quantity: number;
     name: string;
+    image: string;
 }
 
 export function useStorage() {

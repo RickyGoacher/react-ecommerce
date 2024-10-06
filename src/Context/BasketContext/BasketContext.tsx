@@ -7,9 +7,9 @@ interface BasketContextProviderInterface {
 
 interface BasketContentInterface {
     getItemQuantity: (sku:string) => number;
-    increaseQuantity: (sku:string, name:string) => void;
+    increaseQuantity: (sku:string, name:string, image:string) => void;
     decreaseQuantity: (sku:string) => void;
-    getBasketItem: Array<{sku: string, quantity: number, name: string}>;
+    getBasketItem: Array<{sku: string, quantity: number, name: string, image: string;}>;
     removeFromBasket: (sku:string) => void;
 }
 
@@ -17,6 +17,7 @@ interface BasketItemInterface {
     sku: string;
     quantity: number;
     name: string;
+    image: string;
 }
 
 const BasketContext = createContext({} as BasketContentInterface);
@@ -49,10 +50,10 @@ export function BasketContextProvider({children}:BasketContextProviderInterface)
         return getBasketItem?.find(item => item.sku === sku)?.quantity || 0;
     }
 
-    function increaseQuantity(sku: string, name: string) {
+    function increaseQuantity(sku: string, name: string, image:string) {
         setBasketItem(currentItems => {
             if(currentItems.find(item => item.sku === sku) == null) {
-                return [...currentItems, { sku, quantity: 1, name }]
+                return [...currentItems, { sku, quantity: 1, name, image }]
                 
             } else {
                 return currentItems.map(item => {
@@ -87,6 +88,8 @@ export function BasketContextProvider({children}:BasketContextProviderInterface)
             return currentItems?.filter(item => item.sku !== sku);
         });
     }
+
+    console.log(getBasketItem, ' gtbssg')
 
     return (
         <BasketContext.Provider value={{getItemQuantity, increaseQuantity, decreaseQuantity, getBasketItem, removeFromBasket}}>

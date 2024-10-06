@@ -5,11 +5,17 @@ nav ul {
 
 nav ul li {
     list-style: none;
+    padding: 0 0 var(--medium-spacing) 0;
+    border-bottom: solid 1px var(--offwhite-colour);
+}
+
+nav ul li:last-child {
+    border-bottom: 0;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--white-colour);
+    color: var(--offwhite-colour);
     font-size: 1.2rem;
 }
 

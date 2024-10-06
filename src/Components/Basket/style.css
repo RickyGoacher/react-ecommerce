@@ -32,13 +32,11 @@
 }
 
 .basket {
-    position: fixed;
-    right: -300px;
+    position: fixed;   
     top: 0;
     background-color: var(--white-colour);
     border: solid 1px var(--grey-colour);
     height: 100vh;
-    min-width: 300px;
     z-index: 100;
     transition: linear .5s;
 }
@@ -47,9 +45,24 @@
     right: 0;
 }
 
+.basket-items {
+    min-height: 80vh;
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+
 .basket-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--medium-spacing);
+    gap: var(--small-spacing);
+    border-bottom: solid 1px var(--grey-colour);
+    box-sizing: border-box;
+}
+
+.basket-item img {
+    object-fit: contain;
 }
 
 .basket-item .actions span {
@@ -66,4 +79,71 @@
 
 .basket-actions span {
     cursor: pointer;
+}
+
+.basket-wrapper {
+    padding: var(--medium-spacing);
+    box-sizing: border-box;
+}
+
+.action-wrapper button {
+    background-color: var(--cta-colour);
+    color: var(--white-colour);
+    border: solid 1px var(--cta-colour);
+    border-radius: var(--border-radius);
+}
+
+.basket-item .action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-spacing);
+}
+
+.basket-item .action-wrapper .actions {
+    display: flex;
+}
+
+.basket-item .details {
+    display: flex;
+    flex-direction: column;
+}
+
+.basket-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-spacing);
+}
+
+.basket-proceed-actions {
+    padding: var(--medium-spacing);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket-proceed-actions button {
+    width: 100%;
+    padding: var(--medium-spacing);
+    color: var(--white-colour);
+    background-color: var(--primary-bg-colour);
+    border: solid 1px var(--primary-bg-colour);
+    border-radius: var(--border-radius);
+}
+
+@media screen and (max-width: 768px) {
+    .basket {
+        right: -90vw;
+        min-width: 90vw;
+        max-width: 90vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .basket {
+        right: -400px;
+        min-width: 400px;
+        max-width: 400px;
+    }
 }
