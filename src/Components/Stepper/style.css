@@ -1,0 +1,44 @@
+.step-title-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: var(--medium-spacing);
+    border-bottom: solid  1px var(--grey-colour);
+    padding-bottom: var(--medium-spacing);
+}
+
+.step-item-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--medium-spacing);
+    cursor: pointer;
+}
+
+.step-item-title .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+.step-item-content {
+    display: none;
+}
+
+.step-item-content.active {
+    display: block;
+}
+
+.stepper-container .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--medium-spacing);
+}
+
+.stepper-container .actions button {
+    cursor: pointer;
+}
+
+.prev {
+    filter: grayscale(1);
+}

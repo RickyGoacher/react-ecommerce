@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useBasketContext } from "../../Context/BasketContext/BasketContext";
 import CloseIcon from "../../assets/images/icons/circle-xmark-regular.svg";
 import "./style.css";
+import { NavLink } from "react-router-dom";
 
 export const Basket = () => {
 
@@ -62,7 +63,7 @@ export const Basket = () => {
                             {GenerateBasketItems}
                         </div>
                         <div className="basket-proceed-actions">
-                            <button>Proceed to Checkout</button>
+                            <button onClick={() => setBasketState(false)}><NavLink to={"/checkout"}>Proceed to Checkout</NavLink></button>
                         </div>
                     </div>
                 </div>

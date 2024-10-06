@@ -139,6 +139,11 @@
     border-radius: var(--border-radius);
 }
 
+.basket-proceed-actions button a {
+    color: var(--white-colour);
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
     .basket {
         right: -90vw;

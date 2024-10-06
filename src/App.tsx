@@ -6,6 +6,7 @@ import { ProductDisplay } from './Pages/ProductDisplay/ProductDisplay';
 import { Header } from './Components/Header/Header';
 import { Footer } from './Components/Footer/Footer';
 import { BasketContextProvider } from './Context/BasketContext/BasketContext';
+import { Checkout } from './Pages/Checkout/Checkout';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/products/:category" element={<Products/>}/>
           <Route path="/:product" element={<ProductDisplay/>}/>
+          <Route path="/checkout" element={<Checkout/>}/>
         </Routes>
         <Footer />
       </BasketContextProvider>
