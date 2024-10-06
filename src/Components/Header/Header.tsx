@@ -34,7 +34,7 @@ export const Header = () => {
                     <div className="menu">
                         <span className="menu-trigger" onClick={() => setMenuState(!getMenuState)}><img src={menuIcon} width="24" height="24"/></span>
                     </div>
-                    <Logo LogoPath={SiteLogo} LogoWidth="40px" LogoHeight="40px" AltText="Site Logo"/>
+                    <Logo LogoPath={SiteLogo} LogoWidth="130px" LogoHeight="40px" AltText="Site Logo"/>
                 </div>
                 <div className="navigation-actions">
                     <Basket />

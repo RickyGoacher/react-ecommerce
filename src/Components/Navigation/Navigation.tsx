@@ -23,11 +23,7 @@ export const Navigation = ({ SetMenuState }:NavigationInterface) => {
 
     const Elref = useRef<HTMLUListElement>(null);
 
-    console.log(Elref.current?.clientHeight, 'the re')
-
     const Mobile = useMediaQuery(`(max-width: 768px)`);
-
-    console.log(Mobile, 'me')
 
     function outsideClickHandler(e:Event) {
         e.preventDefault();

@@ -20,7 +20,10 @@ export const AddToBasket = ({ProductName, ProductSku, ProductImage}: AddToBasket
     return (
         <>
             <div className="addto-basket-actions">
-                <span className="minus" onClick={() => decreaseQuantity(ProductSku)}>-</span><button className="basket-btn" onClick={() => increaseQuantity(ProductSku, ProductName, ProductImage)}>Add to Basket</button><span className="plus" onClick={() => increaseQuantity(ProductSku, ProductName, ProductImage)}>+</span>
+                <div className="quantity-wrapper">
+                    <span className="minus" onClick={() => decreaseQuantity(ProductSku)}>-</span><span>{Quantity}</span><span className="plus" onClick={() => increaseQuantity(ProductSku, ProductName, ProductImage)}>+</span>
+                </div>
+                <button className="basket-btn" onClick={() => increaseQuantity(ProductSku, ProductName, ProductImage)}>Add to Basket</button>
             </div>
         </>
     );

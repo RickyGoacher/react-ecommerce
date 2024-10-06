@@ -4,13 +4,18 @@
 
 .product-details-wrapper {
     position: sticky;
-    top: 0;
+    top: 40px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--medium-spacing);
     padding: var(--medium-spacing);
     box-sizing: border-box;
+}
+
+.product-details p {
+    border-top: solid 1px var(--grey-colour);
+    padding-top: var(--medium-spacing);
 }
 
 @media screen and (max-width: 768px) {

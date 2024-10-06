@@ -21,7 +21,7 @@ export const Products = () => {
     const [getSortOrder, setSortOrder] = useState<SortInterface>({direction: 'asc', param: 'title'});
     const [getPageNumber, setPageNumber] = useState(0);
     const [getLoader, setLoader] = useState<boolean>(true);
-    const ProductLimit = 3;
+    const ProductLimit = 8;
 
     const fetchProducts = useCallback(async () => {
         const data = await getProducts(
@@ -43,7 +43,7 @@ export const Products = () => {
     }, [Params, getSortOrder, fetchProducts, getPageNumber]);
 
     const GeneratePlaceholders = new Array(6).fill(0).map((_, index) => (
-        <ProductCardPlaceholder />
+        <ProductCardPlaceholder key={index}/>
     ))
 
     const GenerateProducts = getProductData?.products.map(item => {

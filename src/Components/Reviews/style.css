@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: row;
     gap: var(--small-spacing);
+    border-top: solid 1px var(--grey-colour);
+    padding-top: var(--medium-spacing);
 }
 
 .star {

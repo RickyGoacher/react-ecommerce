@@ -1,5 +1,7 @@
 .addto-basket-actions {
     display: flex;
+    flex-direction: column;
+    margin-bottom: var(--small-spacing);
 }
 
 .addto-basket-actions span {
@@ -26,4 +28,9 @@
     color: var(--white-colour);
     background-color: var(--primary-bg-colour);
     border-radius: var(--border-radius);
+}
+
+.quantity-wrapper {
+    display: flex;
+    margin-bottom: var(--medium-spacing);
 }

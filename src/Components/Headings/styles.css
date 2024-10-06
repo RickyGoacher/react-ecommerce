@@ -5,10 +5,6 @@ h1, h2, h3, h4, h5, h6 {
     font-style: normal;
 }
 
-h1 {
-    font-size: 3rem;
-}
-
 h2 {
     font-size: 2rem; 
 }
@@ -27,4 +23,16 @@ h5 {
 
 h6 {
     font-size: .5rem;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
 }

@@ -7,6 +7,6 @@ interface BrandInterface {
 
 export const Brand = ({Name, BrandStyles}:BrandInterface) => {
     return (
-        <span className="brand" style={BrandStyles}>{Name}</span>
+        <span className="brand" style={BrandStyles}>Brand: {Name}</span>
     );
 }
