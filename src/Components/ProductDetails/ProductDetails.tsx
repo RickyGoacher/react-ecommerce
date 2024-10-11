@@ -19,8 +19,6 @@ export const ProductDetails = (props:ProductDetailsInterface) => {
     
     const StarRating = props.Rating ? props.Rating : 0;
 
-    console.log(props, ' pros')
-
     return (
         <section className="product-details">
             <div className="product-details-wrapper">

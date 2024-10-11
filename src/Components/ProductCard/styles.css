@@ -2,6 +2,9 @@
     border: solid 1px var(--grey-colour);
     padding: var(--medium-spacing);
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-card a {

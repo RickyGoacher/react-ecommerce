@@ -1,4 +1,4 @@
-import { useBasketContext } from "../../Context/BasketContext/BasketContext";
+import { useBasketContext } from "../../Context/BasketContext/Context";
 import "./style.css";
 
 interface AddToBasketInterface {
@@ -15,7 +15,7 @@ export const AddToBasket = ({ProductName, ProductSku, ProductImage}: AddToBasket
         decreaseQuantity,
     } = useBasketContext();
 
-    const Quantity = getItemQuantity(ProductSku)
+    const Quantity = getItemQuantity(ProductSku);
 
     return (
         <>

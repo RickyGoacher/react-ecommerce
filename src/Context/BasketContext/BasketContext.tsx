@@ -1,16 +1,9 @@
-import { createContext, ReactNode, useContext, useState, useEffect } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { useStorage } from "../../Hooks/UseStorageHook/UseStorage";
+import { BasketContext } from "./Context";
 
 interface BasketContextProviderInterface {
-    children: ReactNode
-}
-
-interface BasketContentInterface {
-    getItemQuantity: (sku:string) => number;
-    increaseQuantity: (sku:string, name:string, image:string) => void;
-    decreaseQuantity: (sku:string) => void;
-    getBasketItem: Array<{sku: string, quantity: number, name: string, image: string;}>;
-    removeFromBasket: (sku:string) => void;
+    children: ReactNode;
 }
 
 interface BasketItemInterface {
@@ -18,12 +11,6 @@ interface BasketItemInterface {
     quantity: number;
     name: string;
     image: string;
-}
-
-const BasketContext = createContext({} as BasketContentInterface);
-
-export function useBasketContext() {
-    return useContext(BasketContext);
 }
 
 export function BasketContextProvider({children}:BasketContextProviderInterface) {
@@ -88,8 +75,6 @@ export function BasketContextProvider({children}:BasketContextProviderInterface)
             return currentItems?.filter(item => item.sku !== sku);
         });
     }
-
-    console.log(getBasketItem, ' gtbssg')
 
     return (
         <BasketContext.Provider value={{getItemQuantity, increaseQuantity, decreaseQuantity, getBasketItem, removeFromBasket}}>

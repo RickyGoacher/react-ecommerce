@@ -46,8 +46,8 @@
 }
 
 .basket-items {
-    min-height: 75vh;
-    max-height: 75vh;
+    min-height: 69vh;
+    max-height: 69vh;
     overflow-y: scroll;
 }
 

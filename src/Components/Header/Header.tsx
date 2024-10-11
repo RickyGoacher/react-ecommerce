@@ -22,7 +22,7 @@ export const Header = () => {
     }
 
     useEffect(() => {
-        window.addEventListener("mousedown", outsideClickHandler);
+        getMenuState && window.addEventListener("mousedown", outsideClickHandler);
         return (() => {
             window.removeEventListener("mousedown", outsideClickHandler);
         });

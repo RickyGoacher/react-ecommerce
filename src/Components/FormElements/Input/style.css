@@ -1,0 +1,19 @@
+.form-item input {
+    padding: var(--small-spacing);
+    border-radius: var(--border-radius);
+    border: solid 1px var(--grey-colour);
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item.error input {
+    border: solid 2px var(--cta-colour);
+}
+
+.form-item.error span {
+    font-size: 12px;
+    color: var(--cta-colour);
+}

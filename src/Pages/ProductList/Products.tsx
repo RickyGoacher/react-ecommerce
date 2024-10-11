@@ -35,7 +35,6 @@ export const Products = () => {
             return response;
         })
         setProductData(data);
-        console.log(getLoader, 'get loader')
     }, [getSortOrder, Params, getPageNumber, setLoader]);
 
     useEffect(() => {

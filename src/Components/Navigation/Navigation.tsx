@@ -33,7 +33,7 @@ export const Navigation = ({ SetMenuState }:NavigationInterface) => {
     }
 
     useEffect(() => {
-        window.addEventListener("mousedown", outsideClickHandler);
+        getNavigationState && window.addEventListener("mousedown", outsideClickHandler);
         return (() => {
             window.removeEventListener("mousedown", outsideClickHandler);
         });

@@ -8,7 +8,7 @@ export const SortOrder = ({SetSortOrder, Title, SortBy}:SortOrderInterface) => {
 
     return (
         <div>
-            <span>{Title}: </span>
+            <span>{Title}:</span>
             <select onChange={(e) => SetSortOrder({direction: e.target.value, param: SortBy})}>
                 <option value="asc">Asc</option>
                 <option value="desc">Desc</option>

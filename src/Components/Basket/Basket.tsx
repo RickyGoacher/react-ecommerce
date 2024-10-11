@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useBasketContext } from "../../Context/BasketContext/BasketContext";
+import { useBasketContext } from "../../Context/BasketContext/Context";
 import CloseIcon from "../../assets/images/icons/circle-xmark-regular.svg";
 import "./style.css";
 import { NavLink } from "react-router-dom";
@@ -20,7 +20,7 @@ export const Basket = () => {
     }
 
     useEffect(() => {
-        window.addEventListener("mousedown", outsideClickHandler);
+        getBasketState && window.addEventListener("mousedown", outsideClickHandler);
         return (() => {
             window.removeEventListener("mousedown", outsideClickHandler);
         });
@@ -36,9 +36,9 @@ export const Basket = () => {
                 </div>
                 <div className="action-wrapper">
                     <div className="actions">
-                        <span onClick={() => increaseQuantity(item.sku, item.name, item.image)}>+</span>
-                        <span>{item.quantity}</span>
                         <span onClick={() => decreaseQuantity(item.sku)}>-</span>
+                        <span>{item.quantity}</span>
+                        <span onClick={() => increaseQuantity(item.sku, item.name, item.image)}>+</span>
                     </div>
                     <div className="actions">
                         <button onClick={() => removeFromBasket(item.sku)}>Remove</button>            
@@ -59,11 +59,14 @@ export const Basket = () => {
                 <div ref={ref} className={getBasketState ? "basket active" : "basket"}>
                     <div className="basket-actions"><span>My Basket</span><span onClick={() => setBasketState(!getBasketState)}><img src={CloseIcon} width="24" height="24"/></span></div>
                     <div className="basket-wrapper">
+                        <div className="basket-proceed-actions">
+                            <button onClick={() => setTimeout(() => setBasketState(false), 300)}><NavLink to={"/checkout"}>Proceed to Checkout</NavLink></button>
+                        </div>
                         <div className="basket-items">
                             {GenerateBasketItems}
                         </div>
                         <div className="basket-proceed-actions">
-                            <button onClick={() => setBasketState(false)}><NavLink to={"/checkout"}>Proceed to Checkout</NavLink></button>
+                            <button onClick={() => setTimeout(() => setBasketState(false), 300)}><NavLink to={"/checkout"}>Proceed to Checkout</NavLink></button>
                         </div>
                     </div>
                 </div>

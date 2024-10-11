@@ -12,6 +12,7 @@ interface StepperComponentInterface {
     stepTitleDirectionMobile: string;
     stepTitleDirectionDesktop: string;
     mobileBreakpoint: number;
+    Proceed: boolean;
 }
 
 const StepperComponent = (props:StepperComponentInterface) => {
@@ -114,7 +115,7 @@ const StepperComponent = (props:StepperComponentInterface) => {
                     {GeneratedStepContent}
                     <div className="actions">
                         {getCurrentStep !== 0 ? <button className="prev" onClick={() => setCurrentStep(getCurrentStep - 1)} style={props.buttonStyles}>Prev</button> : <div></div>} 
-                        {getCurrentStep !== (props.children.length - 1) && <button className="next" onClick={() => setCurrentStep(getCurrentStep + 1)} style={props.buttonStyles}>Next</button>}
+                        {getCurrentStep !== (props.children.length - 1) && props.Proceed && <button className="next" onClick={() => setCurrentStep(getCurrentStep + 1)} style={props.buttonStyles}>Next</button>}
                     </div>
                 </div>
             </div>
