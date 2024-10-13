@@ -16,3 +16,15 @@ export function useStorage() {
 
     return [handleGettingStorage, handleSettingStorage];
 }
+
+export function useAddressStorage() {
+    function handleSettingStorage(basketObject:any) {
+        localStorage.setItem('address', JSON.stringify(basketObject));
+    }
+
+    function handleGettingStorage(itemName: string | any):Array<UseStorageInterface> | any {
+        return localStorage.getItem(itemName);
+    }
+
+    return [handleGettingStorage, handleSettingStorage];
+}

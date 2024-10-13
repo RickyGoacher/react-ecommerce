@@ -40,5 +40,15 @@
 }
 
 .prev {
-    filter: grayscale(1);
+    background-color: var(--grey-colour);
+}
+
+.next {
+    background-color: var(--primary-bg-colour);
+    color: var(--white-colour);
+}
+
+.next.inactive {
+    background-color: var(--grey-colour);
+    color: var(--primary-bg-colour);
 }

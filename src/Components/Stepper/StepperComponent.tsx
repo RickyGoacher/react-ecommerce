@@ -86,7 +86,7 @@ const StepperComponent = (props:StepperComponentInterface) => {
 
     const GeneratedStepTitles = props.children.map((item, index) => {
         return (
-            <div key={item.props.header + '-' + index} className={getCurrentStep == index ? "step-item-title active" : "step-item-title"} onClick={() => setCurrentStep(index)}>
+            <div key={item.props.header + '-' + index} className={getCurrentStep == index ? "step-item-title active" : "step-item-title"} onClick={() => props.Proceed && setCurrentStep(index)}>
                 <span className="number">{index + 1}</span><span className="title">{item.props.header}</span>
             </div> 
         );
@@ -115,7 +115,7 @@ const StepperComponent = (props:StepperComponentInterface) => {
                     {GeneratedStepContent}
                     <div className="actions">
                         {getCurrentStep !== 0 ? <button className="prev" onClick={() => setCurrentStep(getCurrentStep - 1)} style={props.buttonStyles}>Prev</button> : <div></div>} 
-                        {getCurrentStep !== (props.children.length - 1) && props.Proceed && <button className="next" onClick={() => setCurrentStep(getCurrentStep + 1)} style={props.buttonStyles}>Next</button>}
+                        {getCurrentStep !== (props.children.length - 1) && props.Proceed ? <button className="next" onClick={() => setCurrentStep(getCurrentStep + 1)} style={props.buttonStyles}>Proceed</button> : <button className="next inactive" style={props.buttonStyles}>Proceed</button>}
                     </div>
                 </div>
             </div>

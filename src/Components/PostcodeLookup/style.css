@@ -1,0 +1,28 @@
+.form-section.address-search {
+    position: relative;
+}
+
+.form-section.address-search .autocomplete {
+    display: none;
+    width: 300px;
+    min-height: 150px;
+    max-height: 150px;
+    overflow-y: scroll;
+    border: solid 1px var(--grey-colour);
+    padding: var(--medium-spacing);
+    box-sizing: border-box;
+}
+
+.form-section.address-search .autocomplete.active {
+    display: block;
+}
+
+.form-section.address-search .autocomplete li {
+    list-style: none;
+    padding: var(--small-spacing);
+    cursor: pointer;
+}
+
+.form-section.address-search .autocomplete li:nth-child(odd) {
+    background-color: var(--grey-colour);
+}
