@@ -7,11 +7,11 @@ interface UseStorageInterface {
 
 export function useStorage() {
     function handleSettingStorage(basketObject:Array<UseStorageInterface> | any) {
-        localStorage.setItem('basket', JSON.stringify(basketObject));
+        typeof window !== 'undefined' && localStorage.setItem('basket', JSON.stringify(basketObject));
     }
 
     function handleGettingStorage(itemName: string | any):Array<UseStorageInterface> | any {
-        return localStorage.getItem(itemName);
+        return (typeof window !== 'undefined') && localStorage.getItem(itemName);
     }
 
     return [handleGettingStorage, handleSettingStorage];
@@ -19,11 +19,11 @@ export function useStorage() {
 
 export function useAddressStorage() {
     function handleSettingStorage(basketObject:any) {
-        localStorage.setItem('address', JSON.stringify(basketObject));
+        (typeof window !== 'undefined') && localStorage.setItem('address', JSON.stringify(basketObject));
     }
 
     function handleGettingStorage(itemName: string | any):Array<UseStorageInterface> | any {
-        return localStorage.getItem(itemName);
+        return (typeof window !== 'undefined') && localStorage.getItem(itemName);
     }
 
     return [handleGettingStorage, handleSettingStorage];
