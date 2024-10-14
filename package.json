@@ -5,16 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:client": "tsc -b && vite build --outDir ./dist/client",
-    "build:server": "tsc -b && vite build --outDir ./dist/server --ssr src/serverApp.jsx",
-    "build": "npm run build:client && npm run build:server",
-    "start": "node server/index.js",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.21.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
