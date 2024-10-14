@@ -7,7 +7,7 @@
     "dev": "vite",
     "build:client": "tsc -b && vite build --outDir ./dist/client",
     "build:server": "tsc -b && vite build --outDir ./dist/server --ssr src/serverApp.jsx",
-    "build": "npm run build:client && npm run build:server && npm run start",
+    "build": "npm run build:client && npm run build:server",
     "start": "node server/index.js",
     "lint": "eslint .",
     "preview": "vite preview"
