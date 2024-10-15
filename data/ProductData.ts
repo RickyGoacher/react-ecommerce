@@ -47,3 +47,9 @@ export async function getCategories() {
     const Data:Array<CategoryDataInterface> = await Response.json();
     return Data;
 }
+
+export async function searchProducts(query:string) {
+    const Response = await fetch(`${BaseURL}/product/search?q=${query}`)
+    const Data = await Response.json();
+    return Data;
+}

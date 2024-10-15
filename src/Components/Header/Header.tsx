@@ -7,6 +7,7 @@ import "./style.css";
 import { Basket } from "../Basket/Basket";
 import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { Search } from "../Search/Search";
 
 export const Header = () => {
 
@@ -38,6 +39,7 @@ export const Header = () => {
                     <NavLink to={"/"}><Logo LogoPath={SiteLogo} LogoWidth="130px" LogoHeight="40px" AltText="Site Logo"/></NavLink>
                 </div>
                 <div className="navigation-actions">
+                    <Search />
                     <Basket />
                 </div>  
             </div>

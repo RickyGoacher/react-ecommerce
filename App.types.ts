@@ -89,3 +89,10 @@ export interface PropertiesInterface {
     town: string;
     village: string;
 }
+
+export interface SearchResultInterface {
+    limit: number;
+    products: Array<PropertiesInterface>;
+    skip: number;
+    total: number;
+}
