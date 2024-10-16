@@ -6,6 +6,7 @@ import { Input } from "../../Components/FormElements/Input/Input";
 import { StringValidation, EmailValidation, PhoneValidation, PostcodeValidation, IsRequiredStringValidation } from "../../Helpers/FormValidation";
 import { PostcodeLookup } from "../../Components/PostcodeLookup/PostcodeLookup";
 import { useAddressStorage } from "../../Hooks/UseStorageHook/UseStorage";
+import { useScrollTop } from "../../Hooks/UseScrollTop/UseScrollTop";
 
 export const Checkout = () => {
 
@@ -84,6 +85,8 @@ export const Checkout = () => {
         setAutofill(JSON.parse(getStorage('address')))
         setProceed(getFirstName.isValid && getLastName.isValid && getEmail.isValid && getPhoneNumber.isValid && getPostcode.isValid && getAddressLineOne.isValid && getAddressLineTwo.isValid && getCounty.isValid && getTown.isValid)
     }, [getFirstName, getLastName, getEmail, getPhoneNumber, getPostcode, getAddressLineOne, getAddressLineTwo, getCounty, getTown]);
+
+    useScrollTop([]);
 
     return (
         <>

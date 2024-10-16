@@ -43,11 +43,16 @@ export const Search = () => {
         });
     });
 
+    function handleClick() {
+        setInputState(false);
+        setSearchState(false);
+    }
+
     const GenerateSearchResult = getSearchResults && getSearchResults.products.map((item:any, index:number) => {
         const Link = item.title.split(' ').join('-').toLowerCase();
         return (
             <li key={index} className="search-item">
-                <NavLink to={`/${Link}`} state={{id: item.id}}>
+                <NavLink to={`/${Link}`} state={{id: item.id}} onClick={handleClick}>
                     <span>{item.title}</span>
                 </NavLink>
             </li>

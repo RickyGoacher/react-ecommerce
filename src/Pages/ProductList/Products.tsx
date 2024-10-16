@@ -8,6 +8,7 @@ import { ToolBar } from '../../Components/ToolBar/ToolBar';
 import { Pagination } from '../../Components/Pagination/Pagination';
 import { ProductCardPlaceholder } from '../../Components/Placeholders/ProductCardPlaceholder/ProductCardPlaceholder';
 import './styles.css';
+import { useScrollTop } from '../../Hooks/UseScrollTop/UseScrollTop';
 
 interface SortInterface {
     direction: string;
@@ -48,6 +49,8 @@ export const Products = () => {
     const GenerateProducts = getProductData?.products.map(item => {
         return <ProductCard key={item.title} props={item}/>
     });
+
+    useScrollTop([Params, getSortOrder, fetchProducts, getPageNumber])
 
     return (
         <>

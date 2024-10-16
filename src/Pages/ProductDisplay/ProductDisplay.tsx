@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { ProductDataInterface } from '../../../App.types';
 import { ProductDetails } from "../../Components/ProductDetails/ProductDetails";
 import { Gallery } from "../../Components/Gallery/Gallery";
+import { useScrollTop } from "../../Hooks/UseScrollTop/UseScrollTop";
 import "./styles.css";
+import { ProductGalleryPlaceholder } from "../../Components/Placeholders/ProductGalleryPlaceholder/ProductGalleryPlaceholder";
 
 export const ProductDisplay = () => {
 
@@ -21,9 +23,11 @@ export const ProductDisplay = () => {
         setProductData(data);
     }
 
+    useScrollTop([fetchProduct]);
+
     return (
         <div className="product-container">
-            {getProductData && <Gallery Images={getProductData?.images}/>}
+            {!getProductData ? <ProductGalleryPlaceholder/> : <Gallery Images={getProductData?.images}/>}
             <ProductDetails 
                 Title={getProductData?.title} 
                 Description={getProductData?.description} 

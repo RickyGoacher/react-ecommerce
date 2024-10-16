@@ -1,0 +1,5 @@
+.heading-placeholder {
+    min-height: 60px;
+    width: 300px;
+    background-color: var(--grey-colour);
+}
