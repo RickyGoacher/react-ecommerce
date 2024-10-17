@@ -132,7 +132,6 @@
 
 .basket-proceed-actions button {
     width: 100%;
-    padding: var(--medium-spacing);
     color: var(--white-colour);
     background-color: var(--primary-bg-colour);
     border: solid 1px var(--primary-bg-colour);
@@ -140,8 +139,22 @@
 }
 
 .basket-proceed-actions button a {
+    display: block;
     color: var(--white-colour);
     text-decoration: none;
+    padding: var(--medium-spacing);
+}
+
+.basket-totals {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--medium-spacing);
+    border: solid 1px var(--grey-colour);
+    border-radius: var(--border-radius);
+}
+
+.basket-totals span {
+    font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {

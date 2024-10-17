@@ -9,9 +9,34 @@
 }
 
 .category-tiles .tile a {
+    position: relative;
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.category-tiles .tile .text-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-colour);
+    text-align: center;
+    z-index: 1;
+}
+
+.category-tiles .tile .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--black-colour);
+    opacity: .4;
 }
 
 .category-tiles .tile img {

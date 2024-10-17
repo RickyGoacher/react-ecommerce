@@ -38,3 +38,38 @@
 #checkout-form .form-section.name .form-item {
     width: calc(50% - var(--medium-spacing));
 }
+
+.payment-methods-container {
+    width: 100%;
+    display: flex;
+    gap: var(--medium-spacing);
+    padding: var(--large-spacing);
+    box-sizing: border-box;
+}
+
+.payment-methods-container .payment-method {
+    box-sizing: border-box;
+    border: solid 1px var(--grey-colour);
+    border-radius: var(--border-radius);
+    padding: var(--large-spacing);
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .payment-methods-container .payment-method {
+        min-width: 33%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .payment-methods-container .payment-method {
+        min-width: 100%;
+    }
+    .payment-methods-container {
+        flex-wrap: wrap;
+    }
+}

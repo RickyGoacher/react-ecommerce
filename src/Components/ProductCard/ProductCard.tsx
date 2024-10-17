@@ -26,7 +26,7 @@ export const ProductCard = ({props}:ProductCardInterface) => {
                 <Price Price={props?.price} DiscountPercentage={props?.discountPercentage} OldPriceStyles={{color: "var(--grey-colour)", fontSize: "1rem"}} DiscountedPriceStyles={{color: "var(--cta-colour)", fontSize: "1.2rem"}} FinalPriceStyles={{color: "var(--black-colour)", fontSize: "1.5rem"}}/>
             </NavLink>
             <div className='product-card-actions'>
-                {props.title && props.sku && props.thumbnail && <AddToBasket ProductName={props.title} ProductSku={props.sku} ProductImage={props.thumbnail}/>}
+                {props.title && props.sku && props.thumbnail && props.discountPercentage && <AddToBasket ProductName={props.title} ProductSku={props.sku} ProductImage={props.thumbnail} ProductPrice={props.price} ProductDiscount={props.discountPercentage}/>}
             </div>
         </div>
     );

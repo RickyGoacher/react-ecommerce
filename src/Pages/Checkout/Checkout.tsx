@@ -144,9 +144,17 @@ export const Checkout = () => {
                     <StepperItemComponent header="Payment">
                         <div className="step-content">
                             <h2>Payment</h2>
-                            <p>
-                            Cras vel dui molestie, condimentum urna ac, lacinia ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque bibendum, sapien ut rhoncus aliquam, ante metus auctor ante, ut pharetra purus dolor vitae ante. Aenean rhoncus eu leo non fermentum.
-                            </p>
+                            <div className="payment-methods-container">
+                                <div className="payment-method">
+                                    <h2>Pay by Card</h2>
+                                </div>
+                                <div className="payment-method">
+                                    <h2>Check / Credit Order</h2>
+                                </div>
+                                <div className="payment-method">
+                                    <h2>PayPal</h2>
+                                </div>
+                            </div>
                         </div>
                     </StepperItemComponent>
                 </StepperComponent>  

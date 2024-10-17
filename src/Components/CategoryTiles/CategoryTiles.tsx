@@ -5,6 +5,7 @@ interface CategoryTilesInterface {
     Tiles: Array<{
         image: string;
         link: string;
+        title: string;
     }>
 }
 
@@ -15,6 +16,10 @@ export const CategortTiles = ({Tiles}: CategoryTilesInterface) => {
             <div key={Math.random()}className="tile">
                 <NavLink to={item.link}>
                     <img src={item.image}/>
+                    <div className="text-wrapper">
+                        <h3>{item.title}</h3>
+                    </div>
+                    <div className="overlay"></div>
                 </NavLink>
             </div>
         );

@@ -31,7 +31,7 @@ export const ProductDetails = (props:ProductDetailsInterface) => {
                 {!StarRating ? <ReviewsPlaceholder/> : <Reviews rating={StarRating} styles={{width: "24px", height: "24px", backgroundColor: "#c1c111"}}/>}
                 <span>SKU: {props.Sku}</span>
                 {!props.Price ? <PricePlaceholder/> : <Price Price={props.Price} DiscountPercentage={props?.DiscountPercent} OldPriceStyles={{color: "#d1d1d1", fontSize: "1.2rem"}} DiscountedPriceStyles={{color: "var(--cta-colour)", fontSize: "1.8rem"}} FinalPriceStyles={{color: "var(--black-colour)", fontSize: "1.8rem"}}/>}
-                {props.Title && props.Sku && props.Image && <AddToBasket ProductName={props.Title} ProductSku={props.Sku} ProductImage={props.Image}/>}
+                {props.Title && props.Sku && props.Image && props.Price && props.DiscountPercent && <AddToBasket ProductName={props.Title} ProductSku={props.Sku} ProductImage={props.Image} ProductPrice={props.Price} ProductDiscount={props.DiscountPercent}/>}
                 <p>{props.Description}</p>
             </div>
         </section>

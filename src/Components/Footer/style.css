@@ -16,6 +16,7 @@ footer .bottom-bar {
     background-color: var(--primary-bg-colour);
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 footer .link-container {
@@ -41,6 +42,7 @@ footer .link-container h4 {
 footer .bottom-bar span {
     color: var(--white-colour);
     margin-left: var(--medium-spacing);
+    margin-right: var(--medium-spacing);
 }
 
 @media screen and (max-width: 768px) {

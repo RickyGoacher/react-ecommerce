@@ -26,6 +26,7 @@ export const Footer = () => {
             </div>
             <div className="bottom-bar">
                 <span>Ricky Goacher</span>
+                <span>Built with Vite + React</span>
             </div>
         </footer>
     )

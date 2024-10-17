@@ -11,6 +11,16 @@
     padding: var(--large-spacing);
 }
 
+.image-text-container button {
+    padding: var(--small-spacing) var(--medium-spacing);
+    background-color: var(--primary-bg-colour);
+    color: var(--white-colour);
+    border: solid 1px var(--primary-bg-colour);
+    border-radius: var(--border-radius); 
+    margin-top: var(--medium-spacing);
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
     .image-text-container {
         padding: 0 var(--large-spacing);

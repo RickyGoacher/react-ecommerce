@@ -18,6 +18,7 @@ nav ul li a {
         padding: var(--medium-spacing);
         max-height: 90vh;
         overflow-y: scroll;
+        background-color: var(--white-colour);
     }
 
     nav ul {
@@ -37,6 +38,7 @@ nav ul li a {
 
     nav ul li a {
         font-size: 1rem;
+        color: var(--primary-bg-colour);
     }
 
     nav > span {
@@ -52,6 +54,7 @@ nav ul li a {
         overflow: hidden;
         transition: max-height .5s;
         justify-content: space-between;
+        background-color: var(--primary-bg-colour);
     }
 
     nav > span {

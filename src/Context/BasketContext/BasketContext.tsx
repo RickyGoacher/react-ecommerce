@@ -11,6 +11,8 @@ interface BasketItemInterface {
     quantity: number;
     name: string;
     image: string;
+    price: number;
+    discount: number;
 }
 
 export function BasketContextProvider({children}:BasketContextProviderInterface) {
@@ -37,10 +39,10 @@ export function BasketContextProvider({children}:BasketContextProviderInterface)
         return getBasketItem?.find(item => item.sku === sku)?.quantity || 0;
     }
 
-    function increaseQuantity(sku: string, name: string, image:string) {
+    function increaseQuantity(sku: string, name: string, image:string, price: number, discount: number) {
         setBasketItem(currentItems => {
             if(currentItems.find(item => item.sku === sku) == null) {
-                return [...currentItems, { sku, quantity: 1, name, image }]
+                return [...currentItems, { sku, quantity: 1, name, image, price, discount }]
                 
             } else {
                 return currentItems.map(item => {
